@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Game from "./tictactoe";
+import FetchApi from "./fetchAPI";
+import Navbar from "./navbar";
+import Home from "./home";
+import {Route, Routes} from "react-router-dom"
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <div className = "container">
+        <Routes>
+          <Route path ="/" element = {<Home />} />
+          <Route path ="/Game" element = {<Game />} />
+          <Route path ="/API" element = {<FetchApi />} />
+        </Routes>
+
+      </div>
+
+    </>
+
   );
 }
-
-export default App;
